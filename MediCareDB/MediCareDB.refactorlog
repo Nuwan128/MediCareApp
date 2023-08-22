@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="d0612cb9-b995-4208-8b15-9768bea10883" ChangeDateTime="03/24/2023 09:38:14">
+    <Property Name="ElementName" Value="[dbo].[FK_MedicalReports_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[MedicalReports]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_MedicalReports_MedicalRecords]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="833b75cd-f869-4169-a331-d633d92b995b" ChangeDateTime="03/24/2023 09:41:24">
+    <Property Name="ElementName" Value="[dbo].[FK_Prescriptions_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Prescriptions]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_Prescriptions_MedicalReports]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="bfa30672-9919-472c-a88e-186485115cfc" ChangeDateTime="03/24/2023 09:41:46">
+    <Property Name="ElementName" Value="[dbo].[Prescriptions].[MedicalReportID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Prescriptions]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MedicalReportId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8a0443f6-39ed-466f-aa9d-de5dfd8d5025" ChangeDateTime="03/24/2023 10:42:58">
+    <Property Name="ElementName" Value="[dbo].[Doctors].[UserID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Doctors]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="UserId" />
+  </Operation>
+</Operations>
