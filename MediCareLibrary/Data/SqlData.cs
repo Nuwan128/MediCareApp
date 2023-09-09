@@ -94,7 +94,8 @@ namespace MediCareLibrary.Data
                                                                             new 
                                                                             { 
                                                                                 password = user.Password,
-                                                                                email = user.Email
+                                                                                email = user.Email,
+                                                                                userType = user.UserType
                                                                             },
                                                                             connectionStringName,
                                                                             true).First();
