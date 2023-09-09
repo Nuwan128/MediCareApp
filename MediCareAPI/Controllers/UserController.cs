@@ -68,9 +68,27 @@ namespace MediCareAPI.Controllers
 
             try
             {
-                _db.LoginUser(user);
-                _log.LogInformation($"{user.Email} Login Successfully");
-                return Ok(new { message = $"{user.Email} Login successfully." });
+
+               
+                FullUserModel authenticatedUser = _db.LoginUser(user);
+
+                if (authenticatedUser != null)
+                {
+                    // Authentication succeeded, return user details
+                    _log.LogInformation($"{user.Email} Login Successfully");
+                    return Ok(authenticatedUser);
+                }
+                else
+                {
+                    // Authentication failed
+                    return BadRequest("Authentication failed.");
+                }
+
+
+
+                //_db.LoginUser(user);
+                //
+                //return Ok(new { message = $"{user.Email} Login successfully." });
             }
             catch (Exception ex)
             {

@@ -7,6 +7,6 @@ namespace MediCareLibrary.Data
         void CreateUser(FullUserModel user);
         List<FullUserModel> GetUsers();
         FullUserModel GetUserById(int id);
-        void LoginUser(FullUserModel user);
+        FullUserModel LoginUser(FullUserModel user);
     }
 }

@@ -88,17 +88,19 @@ namespace MediCareLibrary.Data
 
         }
 
-        public void LoginUser(FullUserModel user)
+        public FullUserModel LoginUser(FullUserModel user)
         {
-            _db.LoadData<FullUserModel, dynamic>("dbo.spUser_Verify_User",
+           FullUserModel fullUser = _db.LoadData<FullUserModel, dynamic>("dbo.spUser_Verify_User",
                                                                             new 
                                                                             { 
                                                                                 password = user.Password,
                                                                                 email = user.Email,
-                                                                                userType = user.UserType
+                                                                            
                                                                             },
                                                                             connectionStringName,
                                                                             true).First();
+
+            return fullUser;
 
 
             
