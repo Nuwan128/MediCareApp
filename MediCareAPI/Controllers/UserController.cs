@@ -12,10 +12,10 @@ namespace MediCareAPI.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IDatabaseData _db;
+        private readonly IUserData _db;
         private readonly ILogger<UserController> _log;
 
-        public UserController(IDatabaseData db,ILogger<UserController> log)
+        public UserController(IUserData db,ILogger<UserController> log)
         {
             _db = db;
             _log = log;

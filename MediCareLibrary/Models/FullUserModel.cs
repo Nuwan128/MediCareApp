@@ -22,6 +22,7 @@ namespace MediCareLibrary.Models
         public string? Speciality { get; set; }
 
         public List<PhoneNumberModel> phoneNumbers { get; set; } = new List<PhoneNumberModel>();
+        public List<MedicalRecord>? MedicalRecords { get; set; } = new List<MedicalRecord>();
 
     }
 }

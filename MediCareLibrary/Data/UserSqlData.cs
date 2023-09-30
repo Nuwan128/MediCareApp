@@ -8,19 +8,19 @@ using System.Threading.Tasks;
 
 namespace MediCareLibrary.Data
 {
-    public class SqlData : IDatabaseData
+    public class UserSqlData : IUserData
     {
         private readonly ISqlDataAccess _db;
         private const string connectionStringName = "SqlDb";
 
-        public SqlData(ISqlDataAccess db)
+        public UserSqlData(ISqlDataAccess db)
         {
             _db = db;
         }
 
         public void CreateUser(FullUserModel user)
         {
-           
+
             _db.SaveData("dbo.spUsers_Insert_User", new
             {
                 firstName = user.FirstName,
@@ -59,13 +59,13 @@ namespace MediCareLibrary.Data
 
                 if (user.UserType.ToLower() == "admin")
                 {
-                    
+
                 }
-                else if(user.UserType.ToLower() == "doctor")
+                else if (user.UserType.ToLower() == "doctor")
                 {
                     _db.SaveData("dbo.spDoctor_Insert_Doctor",
-                        new 
-                        { 
+                        new
+                        {
                             Id = newUser.Id,
                             speciality = user.Speciality
 
@@ -90,20 +90,20 @@ namespace MediCareLibrary.Data
 
         public FullUserModel LoginUser(FullUserModel user)
         {
-           FullUserModel fullUser = _db.LoadData<FullUserModel, dynamic>("dbo.spUser_Verify_User",
-                                                                            new 
-                                                                            { 
-                                                                                password = user.Password,
-                                                                                email = user.Email,
-                                                                            
-                                                                            },
-                                                                            connectionStringName,
-                                                                            true).First();
+            FullUserModel fullUser = _db.LoadData<FullUserModel, dynamic>("dbo.spUser_Verify_User",
+                                                                             new
+                                                                             {
+                                                                                 password = user.Password,
+                                                                                 email = user.Email,
+
+                                                                             },
+                                                                             connectionStringName,
+                                                                             true).First();
 
             return fullUser;
 
 
-            
+
 
         }
 
@@ -153,7 +153,7 @@ namespace MediCareLibrary.Data
         {
             var user = _db.LoadData<FullUserModel, dynamic>("dbo.spUser_GetUserBy_Id", new { Id = id }, connectionStringName, true).First();
 
-             
+
 
             user.phoneNumbers = GetUserPhoneNumbers(user.Id);
 

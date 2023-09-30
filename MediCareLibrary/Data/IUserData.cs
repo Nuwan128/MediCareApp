@@ -2,11 +2,13 @@
 
 namespace MediCareLibrary.Data
 {
-    public interface IDatabaseData
+    public interface IUserData
     {
         void CreateUser(FullUserModel user);
-        List<FullUserModel> GetUsers();
+        void DeleteUser();
         FullUserModel GetUserById(int id);
+        List<PhoneNumberModel> GetUserPhoneNumbers(int userId);
+        List<FullUserModel> GetUsers();
         FullUserModel LoginUser(FullUserModel user);
     }
 }

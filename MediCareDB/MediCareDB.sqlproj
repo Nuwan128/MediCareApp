@@ -61,6 +61,8 @@
     <Folder Include="dbo\Stored Procedure" />
     <Folder Include="dbo\Scripts" />
     <Folder Include="Publish Profiles" />
+    <Folder Include="dbo\Stored Procedure\User" />
+    <Folder Include="dbo\Stored Procedure\MedicalRecords" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Users.sql" />
@@ -72,13 +74,18 @@
     <Build Include="dbo\Tables\Medicines.sql" />
     <Build Include="dbo\Tables\UserPhoneNumbers.sql" />
     <Build Include="dbo\Tables\PrescribedMedicines.sql" />
-    <Build Include="dbo\Stored Procedure\spUsers_Insert_User.sql" />
-    <Build Include="dbo\Stored Procedure\spUserPhoneNumbers_Insert_Number.sql" />
-    <Build Include="dbo\Stored Procedure\spUsers_Get_All_Users.sql" />
-    <Build Include="dbo\Stored Procedure\spUser_GetUserBy_Id.sql" />
-    <Build Include="dbo\Stored Procedure\spDoctor_Insert_Doctor.sql" />
-    <Build Include="dbo\Stored Procedure\spPatient_Insert_Patient.sql" />
-    <Build Include="dbo\Stored Procedure\spUser_Verify_User.sql" />
+    <Build Include="dbo\Stored Procedure\User\spDoctor_Insert_Doctor.sql" />
+    <Build Include="dbo\Stored Procedure\User\spPatient_Insert_Patient.sql" />
+    <Build Include="dbo\Stored Procedure\User\spUser_GetUserBy_Id.sql" />
+    <Build Include="dbo\Stored Procedure\User\spUser_Verify_User.sql" />
+    <Build Include="dbo\Stored Procedure\User\spUserPhoneNumbers_Insert_Number.sql" />
+    <Build Include="dbo\Stored Procedure\User\spUsers_Get_All_Users.sql" />
+    <Build Include="dbo\Stored Procedure\User\spUsers_Insert_User.sql" />
+    <Build Include="dbo\Stored Procedure\MedicalRecords\spMedicalRecords_Insert_Record.sql" />
+    <Build Include="dbo\Stored Procedure\MedicalRecords\spMedicalRecords_Update_Record.sql" />
+    <Build Include="dbo\Stored Procedure\MedicalRecords\spMedicalRecords_Delete_Record.sql" />
+    <Build Include="dbo\Tables\FileMetadata.sql" />
+    <Build Include="dbo\Stored Procedure\MedicalRecords\spGetMedicalRecordById.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="MediCareDB.refactorlog" />
